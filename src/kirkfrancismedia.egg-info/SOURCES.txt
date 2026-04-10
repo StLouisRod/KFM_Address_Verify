@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+src/__init__.py
+src/main.py
+src/kirkfrancismedia.egg-info/PKG-INFO
+src/kirkfrancismedia.egg-info/SOURCES.txt
+src/kirkfrancismedia.egg-info/dependency_links.txt
+src/kirkfrancismedia.egg-info/entry_points.txt
+src/kirkfrancismedia.egg-info/requires.txt
+src/kirkfrancismedia.egg-info/top_level.txt
+tests/test_main.py

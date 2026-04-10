@@ -1,0 +1,1 @@
+"""KirkFrancisMedia application package."""

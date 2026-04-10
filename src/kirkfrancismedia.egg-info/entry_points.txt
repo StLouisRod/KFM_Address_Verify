@@ -1,0 +1,2 @@
+[console_scripts]
+kfm = src.main:main

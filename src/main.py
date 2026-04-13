@@ -26,7 +26,19 @@ def load_google_sheet(
         ) from exc
 
     sheet_id = extract_sheet_id(sheet_ref)
-    client = gspread.service_account(filename=credentials_path)
+    try:
+        # Let gspread use default credentials when a path is not provided.
+        client = (
+            gspread.service_account(filename=credentials_path)
+            if credentials_path
+            else gspread.service_account()
+        )
+    except Exception as exc:
+        raise RuntimeError(
+            "Google credentials could not be loaded. Pass --creds <path-to-service-account.json> "
+            f"or configure default credentials for gspread. Details: {type(exc).__name__}: {exc}"
+        ) from exc
+
     spreadsheet = client.open_by_key(sheet_id)
     target_worksheet = spreadsheet.worksheet(worksheet) if worksheet else spreadsheet.sheet1
     return target_worksheet.get_all_values()

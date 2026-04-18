@@ -19,3 +19,6 @@ A simple Python starter project with a `src` layout and basic tests.
 ## Project metadata
 
 Build and tool configuration lives in `pyproject.toml`.
+
+TO RUN:
+python -m src.main --sheet 'https://docs.google.com/spreadsheets/d/1AHR7X0Lz3Hs9u43PDH__i4MtDX2SUKd80fHLoX-v4Yc/edit?gid=1424304541#gid=1424304541' --creds 'secrets\service_account.json'
